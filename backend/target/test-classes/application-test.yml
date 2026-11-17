@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:scf-test;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+
+scf:
+  rule-version: rules-1.0
+  parser-version: parser-1.0
+  users:
+    admin: admin123:ADMIN
+    viewer: viewer123:VIEWER

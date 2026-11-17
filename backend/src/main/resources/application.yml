@@ -1,0 +1,23 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  application:
+    name: scf-metadata-service
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:127.0.0.1}:${DB_PORT:5432}/${DB_NAME:ccdev}
+    username: ${DB_USER:ccdev}
+    password: ${DB_PASSWORD:ccdev}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+scf:
+  # 依赖事实编译与身份确认规则版本，签发构建事实时随事实冻结
+  rule-version: rules-1.0
+  parser-version: parser-1.0
+  # 演示账号（仅本隔离开发环境使用，非生产配置）
+  users:
+    admin: admin123:ADMIN
+    viewer: viewer123:VIEWER
